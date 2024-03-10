@@ -1,0 +1,117 @@
+---
+import HTML from "../icons/html.astro";
+import CSS from "../icons/css.astro";
+import JS from "../icons/js.astro";
+import REACT from "../icons/react.astro";
+import TS from "../icons/ts.astro";
+import TAILWIND from "../icons/tailwind.astro";
+import PS from "../icons/photoshop.astro";
+import ASTRO from "../icons/astro.astro";
+import FIGMA from "../icons/figma.astro";
+import GITHUB from "../icons/GitHub.astro";
+import SQL from "../icons/sql.astro";
+import PY from "../icons/python.astro";
+
+
+---
+
+<article>
+  <h1 id="habilidades" class="text-3xl text-[#5CE1E6] m-11 lg:ml-16">
+    Habilidades:
+  </h1>
+  <div class="container flex flex-col justify-center items-center gap-4">
+      <button
+        class="flex w-56 lg:w-auto justify-center gap-3 align-middle rounded-full border border-white/20 p-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 hover:border-white/40"
+      >
+        <HTML class="w-6 h-6 rounded-md" />
+        HTML
+      </button>
+      <button
+        class="flex w-56 lg:w-auto justify-center gap-3 align-middle rounded-full border border-white/20 p-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 hover:border-white/40"
+      >
+        <CSS class="w-6 h-6 rounded-md" />
+        CSS
+      </button>
+      <button
+        class="flex w-56 lg:w-auto justify-center gap-3 align-middle rounded-full border border-white/20 p-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 hover:border-white/40"
+      >
+        <JS class="w-6 h-6 rounded-md" />
+        JavaScript
+      </button>
+      <button
+        class="flex w-56 lg:w-auto justify-center gap-3 align-middle rounded-full border border-white/20 p-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 hover:border-white/40"
+      >
+        <TS class="w-6 h-6 rounded-md" />
+        TypeSCript
+      </button>
+      <button
+        class="flex w-56 lg:w-auto justify-center gap-3 align-middle rounded-full border border-white/20 p-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 hover:border-white/40"
+      >
+        <REACT class="w-6 h-6 rounded-md" />
+        React
+      </button>
+      <button
+        class="flex w-56 lg:w-auto justify-center gap-3 align-middle rounded-full border border-white/20 p-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 hover:border-white/40"
+      >
+        <TAILWIND class="w-6 h-6 rounded-md" />
+        Tailwind
+      </button>
+      <button
+        class="flex w-56 lg:w-auto justify-center gap-3 align-middle rounded-full border border-white/20 p-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 hover:border-white/40"
+      >
+        <FIGMA class="w-6 h-6 rounded-md" />
+        Figma
+      </button>
+      <button
+        class="flex w-56 lg:w-auto justify-center gap-3 align-middle rounded-full border border-white/20 p-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 hover:border-white/40"
+      >
+        <PS class="w-6 h-6 rounded-md" />
+        Photoshop
+      </button>
+      <button
+        class="flex w-56 lg:w-auto justify-center gap-3 align-middle rounded-full border border-white/20 p-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 hover:border-white/40"
+      >
+        <ASTRO class="w-6 h-6 rounded-md" />
+        Astro
+      </button>
+      <button
+      class="flex w-56 lg:w-auto justify-center gap-3 align-middle rounded-full border border-white/20 p-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 hover:border-white/40"
+    >
+      <SQL class="w-6 h-6 rounded-md" />
+      MySQL
+    </button>
+    <button
+      class="flex w-56 lg:w-auto justify-center gap-3 align-middle rounded-full border border-white/20 p-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 hover:border-white/40"
+    >
+      <GITHUB class="w-6 h-6 rounded-md" />
+      GitHub
+    </button>
+    <button
+      class="flex w-56 lg:w-auto justify-center gap-3 align-middle rounded-full border border-white/20 p-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 hover:border-white/40"
+    >
+      <PY class="w-6 h-6 rounded-md" />
+      Python
+    </button>
+  </div>
+</article>
+
+
+<style>
+@media only screen and (min-width: 1050px) {
+    .container {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 150px 150px 150px;
+      justify-content: space-evenly;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      gap: 20px 10px;
+      grid-auto-flow: row;
+      grid-template-areas:
+                  ". . ."
+                  ". . ."
+                  ". . ."
+                  ". . .";
+        }
+      }
+
+</style>

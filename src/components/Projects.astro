@@ -1,27 +1,58 @@
 ---
+import GitHub from "../icons/GitHub.astro";
+
 const PROJECTS = [
-    {
-        title: 'Online Shop',
-        description: 'Online Shop made wit react',
-        link: '#',
-        github: '#',
-        image: 'https://via.placeholder.com/300x200',
-        tags: ['HTML','CSS','REACT']
-    }
+  {
+    title: "Online Shop",
+    link: "https://online-shop-ten-eta.vercel.app",
+    github: "https://github.com/Xxavier14/Online-shop",
+    image: "./public/img/shop.png"
+  },
+  {
+    title: "PokeDex",
+    link: "https://poke-api-tan-theta.vercel.app",
+    github: "https://github.com/Xxavier14/pokeAPI",
+    image: "./public/img/pokemon.png"
+  },
+  {
+    title: "Movie Search",
+    link: "https://movie-search-react-app-alpha.vercel.app",
+    github: "https://github.com/Xxavier14/Movie-Search-React--App",
+    image: "./public/img/movie.png"
+  },
+  {
+    title: "Aplicacion que consume la API de CatFacts y CatAs",
+    link: "https://xxavier14.github.io/Practica-fetch-customhook/",
+    github: "https://github.com/Xxavier14/Practica-fetch-customhook",
+    image: "./public/img/cats.png"
+  },
 ]
 ---
+<div class="flex flex-col gap-8 justify-center align-middle">
+    <h2 id="projects" class="text-3xl text-[#5CE1E6] m-11 lg:ml-16 ">Proyectos:</h2>
+    {
+      PROJECTS.map(({ image, title,  link, github }) => (
+      <article class="flex flex-col gap-6 text-white items-center mb-20" >
+            <div class="flex flex-col lg:flex-row  lg:justify-between gap-6 items-center align-middle ">
+                 <h3 class=" text-xl text-justify p-4 lg:p-0 lg:text-2xl font-bold dark:text-gray-100"> {title}</h3>
+                 <a
+                        href={github}
+		            	target="_blank"
+		            	rel="noopener"
+                        class="flex w-56 lg:w-auto justify-center gap-3 align-middle rounded-xl border border-white/20 p-1 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 hover:border-white/40"
+                      >
+                        <GitHub class="w-6 h-6 rounded-md" />
+                        Code
+                 </a>
+            </div>
 
-{
-    PROJECTS.map(({title, description, tags, image}) =>{
-        <article>
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <ul>
-                {tags.map(tag =>{
-                    <li>{tag}</li>   
-                })}
-            </ul>
-            <img src={image} >
-        </article>
-    })
-}
+            <a href={link} target="_blank" rel="noopener">
+                <div class="md:w-full w-80">
+                    <div class="relative  items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                        <img alt=`Imagen de ${title}` class="object-cover object-top w-full h-56 transition duration-500 sm:h-full hover:scale-105" loading="lazy" src={image} />
+                  </div>
+              </div>
+            </a>
+     </article>
+    ))}
+</div>

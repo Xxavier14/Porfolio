@@ -1,51 +1,57 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import Disponibility from "../components/Disponibility.astro";
 import Projects from "../components/Projects.astro";
+import Hability from "../components/Hability.astro";
 import LinkedIn from "../icons/LinkedIn.astro";
 import GitHub from "../icons/GitHub.astro";
 import Email from "../icons/Email.astro";
 import CV from "../icons/CV.astro";
-
 ---
 
-<Layout title="Portfolio de Juan Pablo Javier - Desarollador y Programador Web" 
-	description="Portfolio de Juan Pablo Javier - Desarrollador Web y Programador"
+<Layout
+  title="Portfolio de Juan Pablo Javier - Desarollador y Programador Web"
+  description="Portfolio de Juan Pablo Javier - Desarrollador Web y Programador"
 >
   <main class="px-5">
-    <section class="w-full mx-auto lg:w-[740px] py-44">
-      <div class="flex gap-5 justify-center">
+    <section class="w-full mx-auto lg:w-[740px] pt-44">
+      <div class="flex gap-5 justify-center align-middle">
         <img
-          class="rounded-full w-12 h-12"
-          src="https://media.licdn.com/dms/image/D4D35AQHFQF9oxfww4A/profile-framedphoto-shrink_200_200/0/1705614765713?e=1710637200&v=beta&t=tVmeRCGwSVUsXtpDsg5P-pww6tPahpU9K8KmvDEqBUE"
+          class="rounded-full size-14 border-2 border-[#5ce1e68a]"
+          src="./public/img/img.webp"
           alt="Fotografia de Juan Pablo Javier"
         />
 
-        <h1 class="text-white text-2xl lg:text-5xl font-bold flex flex-row gap-x-2 pb-4">
+        <h1
+          class="text-white text-2xl lg:text-5xl font-bold flex flex-row gap-x-2 pb-4"
+        >
           Hola, soy Juan Pablo!
         </h1>
       </div>
 
-      <div class="flex flex-col items-center  gap-3 lg:flex-row lg:gap-20 justify-center my-7 lg:my-2">
-        <h2 class="text-3xl text-green-400/85">Desarrollador Front-End</h2>
+      <div
+        class="flex flex-col items-center gap-3 lg:flex-row lg:gap-20 justify-center my-7 lg:my-2"
+      >
+        <h2 class="text-3xl text-[#5CE1E6]">Desarrollador Front-End</h2>
 
         <a
           href="https://www.linkedin.com/in/juan-pablo-javier"
           target="_blank"
           rel="noopener"
-          class="flex justify-start items-center my-2.5 "
+          class="flex justify-start items-center my-2.5"
         >
           <Disponibility>Disponible para trabajar</Disponibility>
         </a>
       </div>
 
       <ul>
-        <li class="flex flex-col gap-3 lg:flex-row lg:gap-2.5 justify-center items-center m-14 lg:my-4">
+        <li
+          class="flex flex-col gap-3 lg:flex-row lg:gap-2.5 justify-center items-center m-14 lg:my-4"
+        >
           <a
             href="https://www.linkedin.com/in/juan-pablo-javier"
-			target="_blank"
-			rel="noopener"
+            target="_blank"
+            rel="noopener"
             class="flex w-56 lg:w-auto justify-center gap-3 align-middle rounded-full border border-white/20 p-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 hover:border-white/40"
           >
             <LinkedIn class="w-6 h-6 rounded-md" />
@@ -53,8 +59,8 @@ import CV from "../icons/CV.astro";
           </a>
           <a
             href="https://github.com/Xxavier14"
-			target="_blank"
-			rel="noopener"
+            target="_blank"
+            rel="noopener"
             class="flex w-56 lg:w-auto justify-center gap-3 align-middle rounded-full border border-white/20 p-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 hover:border-white/40"
           >
             <GitHub class="w-6 h-6 rounded-md" />
@@ -62,8 +68,8 @@ import CV from "../icons/CV.astro";
           </a>
           <a
             href="https://www.linkedin.com/in/juan-pablo-javier"
-			target="_blank"
-			rel="noopener"
+            target="_blank"
+            rel="noopener"
             class="flex w-56 lg:w-auto justify-center gap-3 align-middle rounded-full border border-white/20 p-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 hover:border-white/40"
           >
             <CV class="w-6 h-6 rounded-md" />
@@ -71,8 +77,8 @@ import CV from "../icons/CV.astro";
           </a>
           <a
             href="mailto:juanpablojavier14@gmail.com"
-			target="_blank"
-			rel="noopener"
+            target="_blank"
+            rel="noopener"
             class="flex w-56 lg:w-auto justify-center gap-3 align-middle rounded-full border border-white/20 p-2 px-4 bg-white/5 hover:scale-105 transition hover:bg-white/10 hover:border-white/40"
           >
             <Email class="w-6 h-6 rounded-md" />
@@ -82,8 +88,12 @@ import CV from "../icons/CV.astro";
       </ul>
     </section>
 
-	<section class="w-full mx-auto lg:w-[740px] py-44">
-		<Projects ></Projects>
-	</section>
+    <section class="w-full mx-auto lg:w-[740px] pt-48">
+      <Hability />
+    </section>
+
+    <section class="w-full mx-auto lg:w-[740px] pt-48">
+      <Projects />
+    </section>
   </main>
 </Layout>
