@@ -21,12 +21,26 @@ const { title, description } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-	    <div
+	    <!-- <div
       class="fixed top-0 bottom-0 z-[-2] min-h-screen w-full
 	   bg-neutral-000 
 	   bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
     >
-    </div>
+    </div> -->
+    <div class="background-container absolute inset-0 z-[-2] ">
+      <section id="background-section" class="background-section absolute inset-0 z-[-2]">
+        <span class="animation-point span-1"></span>
+        <span class="animation-point span-2"></span>
+        <span class="animation-point span-3"></span>
+        <span class="animation-point span-4"></span>
+        <span class="animation-point span-5"></span>
+        <span class="animation-point span-6"></span>
+        <span class="animation-point span-7"></span>
+        <span class="animation-point span-8"></span>
+        <span class="animation-point span-9"></span>
+      </section>
+    </div>    
+    
     <Header />
     <slot />	
   </body>
@@ -40,10 +54,155 @@ const { title, description } = Astro.props;
     color: white;
     font-family: 'Satoshi', sans-serif;
     scroll-behavior: smooth;
-    
+    height: auto; 
+    overflow: auto; 
+    overflow-x: hidden;
   }
   body {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    height: auto; 
+    overflow: auto; 
+    overflow-x: hidden;
   }
+  .background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    min-height: 100%;
+    overflow-x: hidden; 
+}
+
+#background-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    background-color: rgb(10, 10, 10);
+    background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(120, 119, 198, 0.3), rgba(255, 255, 255, 0));
+    background-size: cover;
+    animation: animateBg 50s linear infinite;
+    overflow-x: hidden; 
+}
+@keyframes animateBg {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.animation-point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: #e2e2e2;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.06), 0 0 0 8px rgba(255,255,255,0.06), 0 0 20px rgba(255,255,255,0.06);
+    animation: animate 3s linear infinite;
+}
+
+.animation-point::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(90deg, #6789d37a, transparent);
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(315deg) translateX(0);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(315deg) translateX(-1000px);
+        opacity: 0;
+    }
+}
+
+.span-1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 1s;
+}
+
+.span-2 {
+    top: 15%;
+    left: 30%;
+    animation-delay: 0.2s;
+    animation-duration: 3s;
+}
+
+.span-3 {
+    top: 20%;
+    left: 50%;
+    animation-delay: 0.4s;
+    animation-duration: 2s;
+}
+
+.span-4 {
+    top: 25%;
+    left: 70%;
+    animation-delay: 0.6s;
+    animation-duration: 1.5s;
+}
+
+.span-5 {
+    top: 30%;
+    left: 90%;
+    animation-delay: 0.8s;
+    animation-duration: 2.5s;
+}
+
+.span-6 {
+    top: 40%;
+    left: 20%;
+    animation-delay: 1s;
+    animation-duration: 3s;
+}
+
+.span-7 {
+    top: 45%;
+    left: 40%;
+    animation-delay: 1.2s;
+    animation-duration: 1.75s;
+}
+
+.span-8 {
+    top: 50%;
+    left: 60%;
+    animation-delay: 1.4s;
+    animation-duration: 1.25s;
+}
+
+.span-9 {
+    top: 60%;
+    left: 80%;
+    animation-delay: 1.6s;
+    animation-duration: 2.25s;
+}
+
+.span-10 {
+    top: 70%;
+    left: 50%;
+    animation-delay: 1.8s;
+    animation-duration: 2.75s;
+}
+
+
 </style>
