@@ -108,6 +108,7 @@ const { title, description } = Astro.props;
     border-radius: 50%;
     box-shadow: 0 0 0 4px rgba(255,255,255,0.06), 0 0 0 8px rgba(255,255,255,0.06), 0 0 20px rgba(255,255,255,0.06);
     animation: animate 3s linear infinite;
+    visibility: hidden; /* Agregar esta línea */
 }
 
 .animation-point::before {
@@ -120,10 +121,32 @@ const { title, description } = Astro.props;
     background: linear-gradient(90deg, #6789d37a, transparent);
 }
 
+
+Para que las estrellas caigan de forma más fluida al cargar la página, puedes realizar algunos ajustes en el CSS y asegurarte de que la animación se inicie en el momento adecuado. Aquí hay un par de sugerencias:
+
+1. Usar visibility en la carga inicial
+Asegúrate de que los puntos de animación (las estrellas) no sean visibles hasta que la animación comience. Esto puede ayudar a evitar que se vean congelados al inicio.
+
+css
+Copiar código
+.animation-point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: #e2e2e2;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.06), 0 0 0 8px rgba(255,255,255,0.06), 0 0 20px rgba(255,255,255,0.06);
+    animation: animate 3s linear infinite;
+    visibility: hidden; /* Agregar esta línea */
+}
+
 @keyframes animate {
     0% {
         transform: rotate(315deg) translateX(0);
         opacity: 1;
+        visibility: visible; /* Cambiar a visible en el 0% */
     }
     70% {
         opacity: 1;
@@ -131,9 +154,9 @@ const { title, description } = Astro.props;
     100% {
         transform: rotate(315deg) translateX(-1000px);
         opacity: 0;
+        visibility: hidden; /* Hacer invisible al final */
     }
 }
-
 .span-1 {
     top: 10%;
     left: 10%;
